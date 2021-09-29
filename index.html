@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app>
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Framework AngularJS</title>
+  </head>
+  <body>
+    
+    <div class="container">
+        <h1>Framework AngularJS</h1>
+        <h4>Características</h4>
+        <ul>
+            <li>É um framework JavaScript;</li>
+            <li>É um framework front-end;</li>
+            <li>É baseao em diretivas para interagir com o HTML;</li>
+            <li>Tem o poder de alterar dinamicamente qualquer parte do HTML de uma página Web.</li>
+        </ul>
+                
+        <hr>
+        
+        <div class="card-columns">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Soma JS</h5>
+                    <form>
+                        <div class="form-group">
+                            <input id="inputN1" class="form-control" placeholder="Digite um número">
+                        </div>
+                        <div class="form-group">
+                            <input id="inputN2" class="form-control" placeholder="Digite outro número">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="somar()" class="btn btn-primary">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <h5 id="h5Soma">???</h5>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Soma AngularJS</h5>
+                    <form>
+                        <div class="form-group">
+                            <input ng-model="numero1" class="form-control" placeholder="Digite um número" type="number">
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="numero2" class="form-control" placeholder="Digite outro número" type="number">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <h5> {{ numero1 + numero2 }}</h5>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="./angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        // $('inputN1').value;
+
+        function somar(){
+            let n1 = parseInt(document.getElementById("inputN1").value);
+            let n2 = parseInt(document.getElementById("inputN2").value);
+
+            if(isNaN(n1) || isNaN(n2))
+                document.getElementById('h5Soma').innerHTML = "Números inválidos";
+            else 
+                document.getElementById('h5Soma').innerHTML = n1 + n2;
+            
+        }
+    
+    </script>
+  </body>
+</html>
